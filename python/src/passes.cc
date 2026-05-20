@@ -29,9 +29,10 @@ void init_triton_passes_common(py::module &&m) {
   using namespace mlir;
   ADD_PASS_WRAPPER_0("add_sccp", createSCCPPass);
   ADD_PASS_WRAPPER_0("add_symbol_dce", createSymbolDCEPass);
-  ADD_PASS_WRAPPER_0("add_inliner", createInlinerPass);
-  ADD_PASS_WRAPPER_0("add_canonicalizer", createCanonicalizerPass);
-  ADD_PASS_WRAPPER_0("add_cse", createCSEPass);
+  //Disable optimizations
+  //ADD_PASS_WRAPPER_0("add_inliner", createInlinerPass);
+  //ADD_PASS_WRAPPER_0("add_canonicalizer", createCanonicalizerPass);
+  //ADD_PASS_WRAPPER_0("add_cse", createCSEPass);
   ADD_PASS_WRAPPER_0("add_licm", createLoopInvariantCodeMotionPass);
   ADD_PASS_WRAPPER_0("print_ir", createPrintIRPass);
 }
